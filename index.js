@@ -33,6 +33,11 @@ app.post('/generateQR', (req,res)=>{
 // console.log(req.body);
 });
 
+app.get('/',(req,res)=>{
+    res.setHeader("Access-Control-Allow-Credentials","true");
+    res.send("API is running...");
+});
+
 
 app.get('/qrimage/:uniqueID',(req,res)=>{
     const { uniqueID } = req.params;
