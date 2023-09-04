@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 // app.use('/qrImage', express.static(path.join(__dirname, 'qrcode.png')));
 app.post('/generateQR', (req,res)=>{
+    res.setHeader("Access-Control-Allow-Credentials","true");
     const data=req.body;
     const newData=data.userText;
     const uniqueID=uuidv4();
